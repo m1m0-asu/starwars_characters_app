@@ -1,4 +1,5 @@
 import './App.css';
+import Person from './components/person';
 import React, {useEffect, useState} from 'react';
 
 function App() {
@@ -15,10 +16,8 @@ function App() {
   return (
     <div className="App">
       <h1>People</h1>
-      {people.map(peep => <div>
-        <div key={peep.name}>{peep.name}</div>
-        <div key={peep.gender}>{peep.gender}</div>
-        </div>
+      {people.map(peep => 
+        <Person person={peep}/>
       )}
     </div>
   );
