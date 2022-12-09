@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.row {
+  justify-content: center;
+}
+
+body {
+  background-color: black;
+}
+
+#load-button {
+  background-color: gold;
+  border-color: black;
+}
+
+#load-button:hover {
+  background-color: rgb(198, 168, 0);
+  border-color: black;
+}
+
+#load-button:active {
+  background-color: rgb(198, 168, 0);
+  border-color: black;
+}

@@ -1,14 +1,18 @@
+import '../css/person.css'
+
 function Person(props) {
 
     return (
-        <div>
-            <div key={props.person.name}>{props.person.name}</div>
-            <div key={props.person.height}>{props.person.height}</div>
-            <div key={props.person.mass}>{props.person.mass}</div>
-            <div key={props.person.hair_color}>{props.person.hair_color}</div>
-            <div key={props.person.skin_color}>{props.person.skin_color}</div>
-            <div key={props.person.eye_color}>{props.person.eye_color}</div>
-            <div key={props.person.birth_year}>{props.person.birth_year}</div>
+        <div className="card col-sm-2 m-sm-3 person-card" style={{width: "15rem"}}>
+            <div className="card-body">
+                <h5 className="card-title" key={props.person.name}>{props.person.name}</h5>
+                <p key={props.person.height}>Height : {props.person.height}</p>
+                <p key={props.person.mass}>Mass : {props.person.mass}</p>
+                <p key={props.person.hair_color}>Hair Color : {props.person.hair_color}</p>
+                <p key={props.person.skin_color}>Skin Color : {props.person.skin_color}</p>
+                <p key={props.person.eye_color}>Eye Color : {props.person.eye_color}</p>
+                <p key={props.person.birth_year}>Birth Year : {props.person.birth_year}</p>
+            </div>
         </div>
     );
 }
