@@ -1,12 +1,14 @@
 import './App.css';
 import Person from './components/person';
 import Navbar from './components/navbar';
+import LinearProgress from '@mui/material/LinearProgress';
 import React, {useEffect, useState} from 'react';
 
 function App() {
 
   const [people, setPeople] = useState([]);
   const [showLoadMoreButton, setShowLoadMoreButton] = useState(false);
+  const [showLinearProgressOnLoad, setShowLinearProgressOnLoad] = useState(true);
   const [showSpinner, setShowSpinner] = useState(false);
 
   function loadMaleCharacters() {
@@ -22,13 +24,12 @@ function App() {
 
   useEffect (() => {
     let ignore = false;
-    setShowSpinner(true)
     fetch('/people/female')
       .then(res => res.json())
       .then(people => {
         if (!ignore) {
           setPeople(people)
-          setShowSpinner(false)
+          setShowLinearProgressOnLoad(false)
           setShowLoadMoreButton(true)
           console.log('ayyy')
         }
@@ -40,6 +41,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      { showLinearProgressOnLoad ? (<LinearProgress color='inherit' style={{color: 'gold'}}/>) : "" }
       <div className='container'>
         <div className='row'>
           {people.map(peep => 
